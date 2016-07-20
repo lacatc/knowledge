@@ -26,3 +26,23 @@ AND 的优先级高于 OR。
 稳定性
 
 默认情况下只有稳定的发行版才会被考虑在内。如果你也想获得 RC、beta、alpha 或 dev 版本，你可以使用 稳定标志。你可以对所有的包做 最小稳定性 设置，而不是每个依赖逐一设置。
+
+### 国内包镜像
+
+[http://pkg.phpcomposer.com/](http://pkg.phpcomposer.com/)
+
+用法1: 修改全局设置
+
+```
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
+```
+
+用法2: 修改项目composer.json的配置
+
+```
+composer config repo.packagist composer https://packagist.phpcomposer.com
+```
+
+> 由于composer.lock文件保存了每一个包的下载地址, 所以对于已经安装的包没有效果, 简单的解决方案是重新生成一份composer.lock文件, 或者执行`composer update`来更新composer.lock文件, 不过后者并不能将所有下载地址更新为新的下载地址, 所以条件允许的话最好用前一种方式.
+
+对于合作项目, 建议将镜像地址设置到项目中(就是用法2), 以避免不同的开发环境安装新的包时在composer.lock中加入国外的下载地址.
