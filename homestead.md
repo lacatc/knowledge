@@ -21,30 +21,47 @@ Homebrew是一个包管理器，就类似于Redhat中的yum，它可以自动解
 如下：
 `$ brew tap josegonzalez/php`
 `$ brew install php55`
-## Laravel Homestead
+## Laravel Homestead(以下安装包xiaomi里都有)
 Laravel Homestead是一个官方预载的Vagrant「封装包」，你不需要在你的本机端安装PHP、HHVM、网页服务器或任何服务器软件。它和win系统中的wamp干的活有着一些类似。
 ### VirtualBox 与 Vagrant
 Vagrant用于创建和部署虚拟化开发环境，就是可以通过Vagrant封装一个开发环境，然后将这个环境分发给团队成员，而且是跨平台的，也就是说，成员可以在自己喜欢的桌面系统上开发程序，不管是Mac还是Windows还是Linux。
 ## 安装Lavavel Homestead
  1. 在启动Homestead环境之前，必须先安装VirtualBox和Vagrant。
- 2. 安装好了之后，增加Vagrant封装包，就是将`laravel/homestead`这个box安装进你的Vagrant安装程序中，在终端执行：  
- `vagrant box add laravel/homestead`  
-*程序有点大，可以将下载地址拷贝出来放到外面的下载工具进行下载，然后进入所下载目录，在上条命令后面添加box的名字即可安装。*  
+ 2. 安装好了之后，增加Vagrant封装包，就是将`laravel/homestead`这个box安装进你的Vagrant安装程序中：  
+  * 将`laravel-homestead-v0.5.0.box`和`laravel-homestead-v0.5.0.json`移到用户当前目录（~）。
+  * 执行命令`vagrant box add laravel-homestead-v0.5.0.json`
+  * 执行命令`vagrant box list`就可以看到你的安装包`laravel/homestead`
  3. 拷贝Homestead仓库
- `git clone https://github.com/laravel/homestead.git Homestead`
- 然后进入目录Homestead，运行`bash init.sh`创建Homestead.yaml配置文件。
-### Homestead.yaml 配置
-**Provider**，即设置成自己喜欢的virtualbox 或者 vmware_fusion
-**authorize**，和key是成对存在的，通过ssh授权的方式和你的homestead环境进行连接。
-**folders**：这个是共享目录，即你本地的这个map:目录会映射到homestead中即to:目录中去。
-**sites**: 属性就是简单的对应一个域名到一个homestead环境目录中去。
-其余的配置就不管了，我也搞不懂是些啥。
-还有最后一步，就是在hosts中将域名添加进去，这样访问域名的时候，就会导向Homestead环境中去。
+  * 进入当前用户目录 `cd ~`
+  * 执行`git clone https://github.com/laravel/homestead.git Homestead`
+  * 然后进入目录Homestead，创建Homestead.yaml配置文件。  
+    `cd Homestead`  
+    `bash init.sh`  
+
+### 修改Homestead.yaml 配置
+* **Provider**，即设置成自己喜欢的virtualbox 或者 vmware_fusion
+* **authorize**，和key是成对存在的，通过ssh授权的方式和你的homestead环境进行连接。
+* **folders**：这个是共享目录，即你本地的这个map:目录会映射到homestead中即to:目录中去。
+* **sites**: 属性就是简单的对应一个域名到一个homestead环境目录中去。  
+* 其余的配置就不管了，我也搞不懂是些啥。   
+  以本地路径为`~/Works/teamwork`的项目为例:  
+  ```
+	folders:
+	    - map: ~/Works
+	      to: /home/vagrant/teamwork  
+	sites:
+	    - map: homestead.app
+	      to: /home/vagrant/teamwork/public
+  ```
+
+
+### Host配置
+* 就是在hosts中将域名添加进去，这样访问域名的时候，就会导向Homestead环境中去。
 如下：
 `192.168.10.10  homestead.app`
-另外，就是如果要新加一个域名，在sites中添加对应的内容之后，要执行`homestead provision`。
+* 另外，就是如果要新加一个域名，在sites中添加对应的内容之后，要执行`vagrant reload --provsison`。
 接下来，就可以运行了：
- `homestead up`
+ `vagrant up`
 
 
  ### 以下是我在使用过程中遇到的问题的汇总 ###
@@ -61,7 +78,7 @@ Vagrant用于创建和部署虚拟化开发环境，就是可以通过Vagrant封
 			aliases配置下'Debugbar' => Barryvdh\Debugbar\Facade::class,
 		3. php artisan vendor:publish
 		4. 如有必要可进行缓存和配置缓存清除:
-			1. php artisan cache:clear 
+			1. php artisan cache:clear
 			2. php artisan config:clear
 	2. 使用：
 		1. 可以在View中或Controller写入调试代码，比如:
