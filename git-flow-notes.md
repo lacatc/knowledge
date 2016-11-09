@@ -55,3 +55,6 @@ release分支是**为发布新的产品版本而设计的**。在这个分支上
 
 这样做的显而易见的好处是不会打断正在进行的develop分支的开发工作，能够让团队中负责新功能开发的人与负责代码紧急修复的人并行的开展工作。
 
+## 基于Github的pull request流程
+[博客：基于Github的pull request流程 || 非常详细](http://blog.xiayf.cn/2016/01/18/github-fork-pull-request/)
+
