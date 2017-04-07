@@ -17,6 +17,7 @@
         - [Git 基本使用](git-notes.md)
         - [Git-flow 笔记](git-flow-notes.md)
         - [Sourcetree 使用指南](sourcetree.md)
+        - [廖雪峰 Git 教程](learngit.md)
     - 开发环境
         - [OSX 中开发环境相关配置](dev/developing-with-osx.md)
         - [Windows 中开发环境配置](dev/developing-with-windows.md)
@@ -69,3 +70,5 @@
         - [MathJax 安装和常用配置](mathjax-configuration-notes.md)
     - Markdown
         - [Markdown 简单实用](markdown.md)
+    - Pandas
+        - [pandas 学习](learn-pandas-note.md)
