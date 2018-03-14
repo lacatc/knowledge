@@ -44,3 +44,24 @@ virtualenv支持--python选项，该选项可以直接指定虚拟环境运行�
 
 具体使用都可查看［Virtual Environments］(http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
+***无法激活的问题***
+
+    Failed to activate virtualenv. 
+    Perhaps pyenv-virtualenv has not been loaded into your shell properly. Please restart current shell and try again.
+
+可能原因是环境变量没有配置好。
+
+特别是在安装zsh之后，需要将下列语句
+
+export PYENV_ROOT="$HOME/.pyenv"
+
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if which pyenv > /dev/null;
+  then eval "$(pyenv init -)";
+fi
+
+写入文件~/.zshrc(安装了zsh)或～/.bash_profile(未安装zsh)。
+
+具体操作可查看（https://github.com/eteplus/blog/issues/4）
+
