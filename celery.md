@@ -180,4 +180,11 @@ signatures通常也被叫作"subtasks"。可以这样用：
     >>> res.parent.parent.get()
     4
 
+##注意
+1. 终端要同时开多个，并且关闭后进程就被关闭，连接会中断。
+2. 需要新建窗口时直接右键item2->new window即可。
+3. 在项目中，通常有以下文件
+    - __init__.py（初始化，重要！！！）
+    - celery.py（在这里配置参数）
+    - tasks.py（在这里添加任务）
 
