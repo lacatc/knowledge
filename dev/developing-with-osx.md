@@ -104,6 +104,27 @@ Laravel Homestead是一个官方预载的Vagrant「封装包」，你不需要�
 
 https://github.com/robbyrussell/oh-my-zsh#basic-installation
 
+## 环境路径配置相关
+
+操作步骤:
+
+    1. 打开Terminal（终端）
+
+    2. 输入：vi ~/.bash_profile
+
+    3. 设置PATH：export PATH=/usr/local/mysql/bin:$PATH 
+
+    4. 输入：:wq    //保存并退出vi
+
+    5. 修改立即生效：source ~/.bash_profile
+
+    6. 查看环境变量的值：echo $PATH
+
+如`export PATH=$HOME/.composer/vendor/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH`,
+
+以上路径PATH中冒号起到分隔的作用，$HOME表示当前用户的主目录，显示为～。
+
+安装了zsh的则是在 ～/.zshrc 中设置路径。
 
 
 
