@@ -128,7 +128,21 @@ dependencies:
   - jupyterlab
 ```
 
-具体描述文件的写法可以查阅文档
+> 具体描述文件的写法可以查阅文档
+
+```
+conda env create -f environment.yml
+```
+
+这样就可以安装好一个名为 jupyterlabenv ，且有 jupyterlab 包的环境
+
+既通过上述环境描述文件安装环境等同于，以下操作的组合：
+
+```
+conda env create -n jupyterlabenv
+conda install -n jupyterlabenv jupyterlabs
+```
+
 
 激活环境：
 
@@ -146,9 +160,8 @@ source deactivate
 环境的销毁：
 
 ```
-conda env remove -n {需要创建环境的名字} [新的环境中软件包的要求]
+conda env remove -n {需要创建环境的名字}
 ```
-
 
 ### conda 的包管理
 
