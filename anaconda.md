@@ -90,6 +90,66 @@ Package, dependency and environment management for any language—Python, R, Rub
 - 不光是管理 Python 包，也可以管理其他包
 - 支持多种操作系统 macOS、Windows、Linux
 
+
+### conda 的环境管理
+
+conda 环境是什么？
+
+- 一系列确定的包，组成的可以相互独立存在的运行环境
+- 需要使用环境的时候需要激活环境
+- 不需要使用环境的使用可以关闭环境
+
+为什么需要环境管理？
+
+- 因为在做不同的数据分析事务的时候所需要的包不一样，或者包的版本不一样，如果都在一个环境中处理会引起很多冲突
+
+查看当前已有的环境：
+
+```
+conda env list
+```
+
+环境的创建：
+
+```
+conda env create -n {需要创建环境的名字} [新的环境中软件包的要求]
+```
+
+通过“环境的描述文件”来创建新环境：
+
+建立环境描述文件： environment.yml
+
+内容为：
+```yml
+name: jupyterlabenv
+channels:
+  - conda-forge
+dependencies:
+  - jupyterlab
+```
+
+具体描述文件的写法可以查阅文档
+
+激活环境：
+
+```
+source activate {环境名字}
+```
+
+
+退出当前环境（停止激活当前环境）：
+
+```
+source deactivate
+```
+
+环境的销毁：
+
+```
+conda env remove -n {需要创建环境的名字} [新的环境中软件包的要求]
+```
+
+
 ### conda 的包管理
 
 conda 的包是什么？
@@ -121,25 +181,3 @@ conda install -n {环境名} {包名}
 conda remove -n {环境名} {包名}
 ```
 
-
-### conda 的环境管理
-
-conda 环境是什么？
-
-- 一系列确定的包，组成的可以相互独立存在的运行环境
-- 需要使用环境的时候需要激活环境
-- 不需要使用环境的使用可以关闭环境
-
-环境的使用：
-
-环境的描述文件
-
-environment.yml
-
-```
-name: jupyterlabenv
-channels:
-  - conda-forge
-dependencies:
-  - jupyterlab
-```
