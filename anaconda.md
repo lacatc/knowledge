@@ -103,13 +103,13 @@ conda 环境是什么？
 
 - 因为在做不同的数据分析事务的时候所需要的包不一样，或者包的版本不一样，如果都在一个环境中处理会引起很多冲突
 
-查看当前已有的环境：
+**查看当前已有的环境：**
 
 ```
 conda env list
 ```
 
-环境的创建：
+**环境的创建：**
 
 ```
 conda create -n {需要创建环境的名字} [新的环境中软件包的要求]
@@ -126,7 +126,7 @@ conda create -n {需要创建环境的名字} [新的环境中软件包的要求
 > 使用 `conda create -n {envname}` 建立的环境是一个空环境，空环境就是指环境内任何包都没有，包括 python 本身也没有，
 > 所以这时激活这个环境以后运行 python 实际上是运行系统的 python 因为这时已经安装了 anaconda 环境，所以这时系统的 python 又是 anaconda 默认的 base 环境的 python
 
-通过“环境的描述文件”来创建新环境：
+**通过“环境的描述文件”来创建新环境：**
 
 建立环境描述文件： environment.yml
 
@@ -154,21 +154,20 @@ conda env create -n jupyterlabenv
 conda install -n jupyterlabenv jupyterlabs
 ```
 
-
-激活环境：
+**激活环境：**
 
 ```
 source activate {环境名字}
 ```
 
 
-退出当前环境（停止激活当前环境）：
+**退出当前环境（停止激活当前环境）：**
 
 ```
 source deactivate
 ```
 
-环境的销毁：
+**环境的销毁（彻底删除一个环境和环境内的包）：**
 
 ```
 conda env remove -n {需要创建环境的名字}
@@ -191,7 +190,7 @@ conda 的包是什么？
 
 - 如果 anaconda 软件源上没有，既无法安装
 
-包的安装：
+**包的安装：**
 
 ```
 conda install -n {环境名} {包名}
@@ -199,7 +198,7 @@ conda install -n {环境名} {包名}
 
 默认的环境为 base 既安装以后就有的环境
 
-包的卸载：
+**包的卸载：**
 
 ```
 conda remove -n {环境名} {包名}
@@ -207,11 +206,12 @@ conda remove -n {环境名} {包名}
 
 ### conda 自身的更新
 
-conda 作为一个工具，本身也是一个软件，也是一个 conda 源上的包
+conda 作为一个工具，本身也是一个软件，也是一个 conda 源上的包，只不过我们一般使用默认环境 base 中的 conda 工具，所以更新 conda 就是更新 base 环境中的 conda 包。
 
 conda 更新操作如下：
 
 ```
-conda
+conda update -n base conda
 ```
 
+这样就可以把 conda 升级到最新版本
