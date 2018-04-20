@@ -27,7 +27,7 @@ Anaconda 的资源镜像一般不仅包含 Anaconda 各个版本的安装包下�
 
 - 测试安装是否成功
 
-  - 打开 terminal.app各个
+  - 新开一个 terminal.app 窗口
   - 执行 `python -V`，观察返回结果，有 Anaconda 字样
   - 执行 `which python`。看到返回 /miniconda3/bin/python ，就是安装成功了
 
@@ -54,7 +54,7 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 
 因为 Anaconda 安装包会默认包含 300 多个科学计算、数据分析相关包，所以安装包比较大
 
-所以如果用不大那么多 Anaconda 默认集成的包，且又不希望下载安装占用太多的硬盘空间，且习惯使用 conda env ，那么 miniconda 就是很好的选择。
+所以如果用不到那么多 Anaconda 默认集成的包，且又不希望下载安装占用太多的硬盘空间，且习惯使用 conda env ，那么 miniconda 就是很好的选择。
 
 所以可以理解为 miniconda 就是一个只提供 conda 相关操作的安装包，如果需要另外的第三方包，还需要另外自行安装
 
