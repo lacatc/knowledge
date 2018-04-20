@@ -63,7 +63,7 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 - 可以选择 miniconda3-lastest 版本
 
   - 官网下载 https://conda.io/miniconda.html
-  - 国内镜像站下载（速度较快 https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
+  - 国内镜像站下载（速度较快） https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
 
 - 安装
   - 安装过程比较简单，无需另外进行设置，不断下一步就好，有步骤需要键入用户密码以便安装程序可以进行系统操作。
@@ -112,8 +112,19 @@ conda env list
 环境的创建：
 
 ```
-conda env create -n {需要创建环境的名字} [新的环境中软件包的要求]
+conda create -n {需要创建环境的名字} [新的环境中软件包的要求]
 ```
+
+注意，这里的命令是 `conda create` 而不是 `conda env create`
+
+`conda create` 与 `conda env create` 功能类似，但是使用 `conda create` 可以建立一个没有任何包的空的环境，而使用 `conda env create` 则必须要在建立的时候指定一下包的需求
+
+既执行 `conda env create -n {需要创建环境的名字} {新的环境中软件包的要求}` 创建环境，{新的环境中软件包的要求}这部分是必须要给定的
+
+> 关于“空环境”：
+>
+> 使用 `conda create -n {envname}` 建立的环境是一个空环境，空环境就是指环境内任何包都没有，包括 python 本身也没有，
+> 所以这时激活这个环境以后运行 python 实际上是运行系统的 python 因为这时已经安装了 anaconda 环境，所以这时系统的 python 又是 anaconda 默认的 base 环境的 python
 
 通过“环境的描述文件”来创建新环境：
 
@@ -192,5 +203,15 @@ conda install -n {环境名} {包名}
 
 ```
 conda remove -n {环境名} {包名}
+```
+
+### conda 自身的更新
+
+conda 作为一个工具，本身也是一个软件，也是一个 conda 源上的包
+
+conda 更新操作如下：
+
+```
+conda
 ```
 
