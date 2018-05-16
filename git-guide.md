@@ -40,6 +40,7 @@
 Tips:
 
 - 库，具象化就是一个文件夹
+- 库，抽象化就是一棵树
 - 一个 commit 就是对一系列文件操作的记录
 - 版本变化的依据是文件的变化以及文件内容的变化
 - 一半而言，对于文本文件，git 可以做到行级的变化版本记录
@@ -47,8 +48,8 @@ Tips:
 - 版本变化的一般扩散路径为：
   - 本地工作区 Local Workspace
   - 本地仓库  Local Repo
-  - 自己的远程仓库 Mine Remote Repo
-  - 团队的远程仓库 Origin Remote Repo
+  - 自己的远程仓库 Origin Remote Repo
+  - 团队的远程仓库 Main Remote Repo
 
 ![](_images/git-repo.png)
 
@@ -98,6 +99,8 @@ git clone {src_repo} [dst_dir]
 ```
 
 范例： git clone https://github.com/Datartisan/knowledge  ，注意：此时 dst_dir 即为 knowledge 文件夹名字与源库名字一致
+
+> 使用 git clone 创建的库，其名为 origin 的 remote 会被自动设置为源地址
 
 ### 查看当前 git 库状态
 
@@ -158,8 +161,29 @@ git merge {branch_name}
 git remote add {remote_name} {remote_path}
 ```
 
-### 
+### 查看所有的 Remote
 
+```
+git remote -v
+```
+
+### 获取 Remote 的变动信息，本地不做其他处理
+
+```
+git fetch {remote_name}
+```
+
+### 获取 Remote 的变动信息，且与本地当前分支进行合并（merge）
+
+```
+git pull {remote_name}
+```
+
+### 将当前库的变动推送到某 Remote
+
+```
+git push {remote_name}
+```
 
 
 ## 图形界面使用指南（必须要在了解了命令行git使用以后再学习）
@@ -168,29 +192,39 @@ git 图形界面工具首推 sourcetree
 
 注意：
 
-0. 
+0. 一定要在了解命令行使用的基础之上子再去使用 sourcetree，sourcetree 的功能与命令行几乎一致
 1. sourcetree 是免费的，但是需要有 bitbucket 账户才可以使用
-
-
-## 实际协作过程中的使用的“三库模型”
-
-前提：
-
-- 需要依赖 Git 库托管服务（如 Github、Bitbucket）
-
-
 
 ## 总结一下需要了解的 git 操作：
 
 - git init
 - git clone
 - git add
+- git rm --cached {file}
+- git commit -m
+- git branch
+- git checkout
+- git merge
+- git remote add
+- git remote -v
+- git fetch
+- git pull
+- git push
 
 ## **要求**
 
 - 使用工作邮箱，注册 github 、 bitbucket 账号
 
 - 学习 try.github.io 课程
+
+
+## （Optional）实际协作过程中的使用的“三库模型”
+
+前提：
+
+- 需要依赖 Git 库托管服务（如 Github、Bitbucket）
+
+
 
 
 ## 参考资料
