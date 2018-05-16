@@ -50,6 +50,8 @@ Tips:
   - 自己的远程仓库 Mine Remote Repo
   - 团队的远程仓库 Origin Remote Repo
 
+![](_images/git-repo.png)
+
 ## 使用指南（重要）
 
 * 以 macOS 系统为例 *
