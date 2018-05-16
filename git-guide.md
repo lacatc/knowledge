@@ -5,8 +5,7 @@
 - 版本管理软件
 - 中心式版本管理软件、分布式版本管理软件
 - Git
-- Github
-- Git 库托管服务
+- Git 库托管服务，Github、Bitbucket、自建
 - 文本文件
 - 二进制文件
 
@@ -18,18 +17,13 @@
 
 ## Git 的问题
 
-- 很复杂
+- 概念多
+- 很复杂，高级操作很复杂
 - 命令行操作为核心（其他工具软件可以看做也是通过命令行操作）
-
-## 参考资料
-
-http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
-
-https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
 
 ## 核心概念
 
-- Repository: 仓库
+- Repository: 仓库，简称 repo
 
 - Local Repository：仓库区（或本地仓库）
   - Workspace：工作区
@@ -49,9 +43,12 @@ Tips:
 - 一个 commit 就是对一系列文件操作的记录
 - 版本变化的依据是文件的变化以及文件内容的变化
 - 一半而言，对于文本文件，git 可以做到行级的变化版本记录
-- 但是对于其他二进制文件，只能做到文件整体变化的版本记录
+- 但是对于其他二进制文件，只能做到文件整体变化的版本记录（并不绝对）
 - 版本变化的一般扩散路径为：
-  - 本地仓库 local repo
+  - 本地工作区 Local Workspace
+  - 本地仓库  Local Repo
+  - 自己的远程仓库 Mine Remote Repo
+  - 团队的远程仓库 Origin Remote Repo
 
 ## 使用指南（重要）
 
@@ -156,8 +153,10 @@ git merge {branch_name}
 ### 增加 Remote
 
 ```
-git remote add {remote_name}
+git remote add {remote_name} {remote_path}
 ```
+
+### 
 
 
 
@@ -167,23 +166,33 @@ git 图形界面工具首推 sourcetree
 
 注意：
 
+0. 
 1. sourcetree 是免费的，但是需要有 bitbucket 账户才可以使用
 
 
 ## 实际协作过程中的使用的“三库模型”
 
 前提：
+
 - 需要依赖 Git 库托管服务（如 Github、Bitbucket）
+
+
 
 ## 总结一下需要了解的 git 操作：
 
-git init
-git clone
-git add
+- git init
+- git clone
+- git add
 
-## （Optional）课后要求
+## **要求**
 
 - 使用工作邮箱，注册 github 、 bitbucket 账号
+
 - 学习 try.github.io 课程
 
 
+## 参考资料
+
+http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
+
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
