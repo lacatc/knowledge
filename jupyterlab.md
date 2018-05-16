@@ -1,43 +1,48 @@
 # JupyterLab 基本使用介绍
 
+JupyterLab 是 Jupyter notebook 的替代升级工具
+
+建议以后统一改用 JupyterLab 不再使用 jupyter notebook
 
 ## 安装
 
-注意：JupyterLab 需要 Python 3
+### 注意：
 
-### 安装方法一：使用 pip 安装
+- JupyterLab 需要 Python 3
+-
 
-```
-pip install jupyterlab
-```
-
-### 安装方法二：使用 conda 安装
+### 使用 conda 安装
 
 ```
 conda install -c conda-forge -n {env_name} jupyterlab
 ```
 
-### 安装方法三：使用 conda env 配置文件安装
+## 运行 JupyterLab
 
-创建一个 conda env 配置文件，文件名为 environment.yml，内容为：
-
-```yml
-name: jupyterlabenv
-channels:
-  - conda-forge
-dependencies:
-  - jupyterlab
-```
-
-其中的 name 项可以根据需要修改
-
-然后执行 conda env create -f environment.yml 即可建立一个有 jupyterlab 的名为 jupyterlabenv 的 conda env
-
-然后执行：
+命令行中执行：
 
 ```
-conda activate jupyterlabenv
 jupyter lab
 ```
 
-就可以运行 jupyterlab
+然后会自动打开浏览器跳转到 JupyterLab 界面
+
+## 关闭 JupyterLab
+
+在启动的 jupyter lab 的命令行窗口中，按 ctrl+c ，然后输入 y ，回车
+
+## 界面结构介绍
+
+## 默认自带的4种工作tab类型
+
+- Notebook
+- Console
+- Terminal
+- TextEditor
+
+## 文件/文件夹移动操作
+
+1. cut
+
+2. paste
+
