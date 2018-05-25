@@ -2,18 +2,11 @@
 
 - [首页](readme.md)
 
-- [知识库的编辑与维护](knowledge-base.md)
-
-- [员工手册](company-handbook.md)
-
 - 分析业务相关知识
     - [如何成为数据科学家](how-to-be-a-data-scientist.md)
 
-- 博客分享
-    - [推荐博客](blogs.md)
-
-- 开发相关知识
-    - 代码管理
+- 基本技能
+    - 版本库使用
         - [Git 基本使用](git-notes.md)
         - [Git-flow 笔记](git-flow-notes.md)
         - [Sourcetree 使用指南](sourcetree.md)
@@ -22,8 +15,9 @@
         - [Windows 中开发环境配置](dev/developing-with-windows.md)
         - [Laravel Homestead 相关](homestead.md)
         - [docker 使用](docker-mdap.md)
-    - 开发规范
-        - [PHP代码规范](php-standard-recommendation.md)
+
+- 开发规范
+    - [PHP代码规范](php-standard-recommendation.md)
 
 - 技术相关知识
     - HTTP 相关
@@ -43,8 +37,6 @@
         - [MySQL 相关](database/mysql.md)
     - Spark
         - [Spark 基础知识](spark/spark.md)
-    - Hadoop
-        - TODO
     - Scrapy
         - [Scrapy 基础](scrapy-notes.md)
         - [Scrapy 小技巧](scrapy-tips.md)
