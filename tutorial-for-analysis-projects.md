@@ -4,6 +4,7 @@
 
 - 了解 anaconda 、 conda 环境
 - 了解 jupyter notebook、lab 基本使用
+- 了解 markdown
 - 了解 git 基本使用
 - 了解 git 库托管服务
 
